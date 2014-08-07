@@ -67,7 +67,7 @@ $bot->run(sub {
         }
         else {
             unless ($message->{nickname} eq $bot_name) {
-                if (my ($keyword) = $message->{text} =~ /^(?:amazon|アマゾン)\s(.+)\s#/) {
+                if (my ($keyword) = $message->{text} =~ /^(?:amazon|アマゾン|a)\s(.+)\s#/) {
 
                     my $url = url('/s/', 'field-keywords' => $keyword);
                     my $res = $agent->get($url);
