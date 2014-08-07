@@ -1,0 +1,6 @@
+#!/bin/sh
+BOT_USER=ytnobody
+cd /home/ytnobody/AmazonBot
+exec 2>&1
+exec setuidgid $BOT_USER ./worker.pl
+sleep 5 ### reconnect interval
