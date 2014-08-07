@@ -21,7 +21,7 @@ use XML::Diver;
 use HTML::Tidy::libXML;
 
 my $bot_name = '麻増凛空';
-my @tags = qw/BOT/;
+my @tags = qw/PUBLIC/;
 
 my $tidy = HTML::Tidy::libXML->new;
 my $agent = Furl->new(agent => 'Asamashi-LinKu/0.01', timeout => 20);
