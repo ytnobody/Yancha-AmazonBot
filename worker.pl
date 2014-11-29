@@ -11,7 +11,7 @@ use File::Basename 'dirname';
 use lib (
     File::Spec->catdir(dirname(__FILE__), 'lib'),
     File::Spec->catdir(dirname(__FILE__), 'local', 'lib'),
-    glob(File::Spec->catdir(dirname(__FILE__), 'submodule', '*', 'lib')),
+    glob(File::Spec->catdir(dirname(__FILE__), 'submodules', '*', 'lib')),
 );
 use Unruly;
 
