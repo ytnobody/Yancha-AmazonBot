@@ -42,7 +42,7 @@ my @bad_list = qw/
 /;
 
 my $bot = Unruly->new(
-    url  => 'http://yancha.hachiojipm.org',
+    url  => $ENV{YANCHA_URL} || 'http://yancha.hachiojipm.org',
     tags => {map {($_ => 1)} @tags},
     ping_intervals => 15,
 );
@@ -104,7 +104,7 @@ sub fetch_item {
     my ($content) = @_;
     my $dom = $tidy->html2dom($content, 'utf8');
     my $diver = XML::Diver->new($dom);
-    my $link = $diver->dive('//*[@id="result_0"]/h3/a')->each(sub{shift->attr('href')})->[0] || not_found();
+    my $link = $diver->dive('//*[@id="result_0"]/div/div[2]/div[1]/a')->each(sub{shift->attr('href')})->[0] || not_found();
     return $link;
 }
 
